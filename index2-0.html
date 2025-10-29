@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Answers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .header {
+            background-color: white;
+            padding: 20px 40px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #4169E1, #1E90FF);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 300;
+        }
+
+        .logo-text .finance {
+            color: #4169E1;
+        }
+
+        .logo-text .answers {
+            color: #E91E63;
+            font-weight: 500;
+        }
+
+        .nav {
+            background-color: white;
+            padding: 15px 40px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #4169E1;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .nav-right select {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px 10px;
+            font-size: 14px;
+            color: #666;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .nav-right select:hover {
+            border-color: #4169E1;
+        }
+
+        .nav-right select:focus {
+            outline: none;
+            border-color: #4169E1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 40px;
+        }
+
+        .page-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .panel {
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .panel-header {
+            background-color: #3f51b5;
+            color: white;
+            padding: 15px 20px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .panel-content {
+            padding: 20px;
+        }
+
+        .topic-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .topic-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .topic-item:last-child {
+            border-bottom: none;
+        }
+
+        .topic-item:hover {
+            background-color: #f5f5f5;
+        }
+
+        .topic-name {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .topic-icon {
+            width: 24px;
+            height: 24px;
+            background-color: #757575;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .guide-link {
+            display: block;
+            padding: 12px 15px;
+            background-color: #E3F2FD;
+            border: 1px solid #90CAF9;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .guide-link a {
+            color: #1976D2;
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .guide-link a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: #1976D2;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-text {
+            margin-top: 20px;
+            color: #999;
+        }
+    </style>
+
+    <script type="text/javascript" charset="utf-8">
+  (function (g, e, n, es, ys) {
+    g['_genesysJs'] = e;
+    g[e] = g[e] || function () {
+      (g[e].q = g[e].q || []).push(arguments)
+    };
+    g[e].t = 1 * new Date();
+    g[e].c = es;
+    ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
+  })(window, 'Genesys', 'https://apps.euw2.pure.cloud/genesys-bootstrap/genesys.min.js', {
+    environment: 'prod-euw2',
+    deploymentId: '2f2c9a39-a4f5-4805-91ed-7d5fa24bafc6'
+  });
+</script>
+<script>
+        // Global variables
+        let UserLoggedIn = false;
+        let Language = 'English';
+
+        // Function to update user login status
+        function updateUserStatus() {
+            const userName = document.getElementById('userName').value;
+            UserLoggedIn = userName !== '';
+            
+            console.log('## DEBUG User Status Updated:');
+            console.log('## DEBUG - Selected User:', userName);
+            console.log('## DEBUG - UserLoggedIn:', UserLoggedIn);
+            
+            // If condition for when user is logged in
+            if (UserLoggedIn == true) {
+                console.log('## DEBUG ✓ User is logged in - executing logged in actions');
+                // Action to be implemented here
+                Genesys("command", "Launcher.show");
+                console.log('## DEBUG Genesys: Launcher shown');
+                Genesys("command", "Database.update", { messaging: { customAttributes: { CustomerName: userName }}});
+            } else {
+                console.log('## DEBUG ✗ User is not logged in');
+                Genesys("command", "Launcher.hide");
+                console.log('## DEBUG Genesys: Launcher hidden');
+                Genesys("command", "Database.update", { messaging: { customAttributes: { CustomerName: userName }}});
+            }
+        }
+
+        // Function to update language
+        function updateLanguage() {
+            Language = document.getElementById('language').value;
+            
+            Genesys("command", "Database.update", { messaging: { customAttributes: { CustomerLanguage: Language }}});
+            console.log('## DEBUG Language Updated:', Language);
+        }
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            console.log('## DEBUG === Finance Answers Page Loaded ===');
+            
+            // Try to set Genesys database - wrapped in try/catch to prevent errors
+            try {
+                console.log('## DEBUG Attempting to set Genesys database...');
+                Genesys("command", "Database.set", {
+                    messaging: {
+                        customAttributes: {
+                            department: "Support",
+                            CustomerLanguage: "English",
+                            CustomerName: ""
+                        }
+                    }
+                });
+                console.log('## DEBUG Genesys database set successfully');
+            } catch (error) {
+                console.log('## DEBUG Error setting Genesys database:', error.message);
+            }
+            
+            // Add event listeners
+            document.getElementById('userName').addEventListener('change', updateUserStatus);
+            document.getElementById('language').addEventListener('change', updateLanguage);
+            
+            // Initialize variables
+            console.log('## DEBUG Initializing variables...');
+            updateUserStatus();
+            updateLanguage();
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <div class="logo-icon">💬</div>
+            <div class="logo-text">
+                <span class="finance">Finance</span>
+                <span class="answers">ANSWERS</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">My Requests</a>
+            <a href="#">Guides</a>
+        </div>
+        <div class="nav-right">
+            <span>Hello</span>
+            <select id="userName">
+                <option value="">Select User</option>
+                <option value="John Smith">John Smith</option>
+                <option value="Pierre Cardin">Pierre Cardin</option>
+                <option value="Jan De Jong">Jan De Jong</option>
+                <option value="Jonas Müller">Jonas Müller</option>
+                <option value="Maria García">Maria García</option>
+            </select>
+            <select id="language">
+                <option value="English">English</option>
+                <option value="Français">Français</option>
+                <option value="Español">Español</option>
+                <option value="Deutsch">Deutsch</option>
+                <option value="Nederlands">Nederlands</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="page-title">How can we help you?</h1>
+
+        <div class="content-grid">
+            <div class="panel">
+                <div class="panel-header">Select a Topic</div>
+                <div class="panel-content">
+                    <div class="topic-list">
+                        <div class="topic-item">
+                            <span class="topic-name">Vendor Creation/Update</span>
+                            <div class="topic-icon">⊕</div>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-name">Ordering & Receiving</span>
+                            <div class="topic-icon">⊕</div>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-name">Invoices & Payments</span>
+                            <div class="topic-icon">⊕</div>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-name">MobileXpense/Employee Expense Report</span>
+                            <div class="topic-icon">⊕</div>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-name">Delegation of Authority</span>
+                            <div class="topic-icon">⊕</div>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-name">Cost Objects Creation/ Update</span>
+                            <div class="topic-icon">⊕</div>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-name">Customer Creation/ Update</span>
+                            <div class="topic-icon">⊕</div>
+                        </div>
+                        <div class="topic-item">
+                            <span class="topic-name">Other Questions</span>
+                            <div class="topic-icon">⊕</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">Search for Guides</div>
+                <div class="panel-content">
+                    <div class="guide-link">
+                        <a href="#">Guided Buying – Shopping for UCB SharePoint and Training Materials</a>
+                    </div>
+                    <div class="guide-link">
+                        <a href="#">UCB Ariba Supplier Information portal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <a href="#">Contact us by Phone</a>
+            <div class="footer-text">© 2025 - UCB Finance Answers</div>
+        </div>
+    </div>
+</body>
+</html>
