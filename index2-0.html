@@ -244,7 +244,7 @@
         // Global variables
         let UserLoggedIn = false;
         let Language = 'English';
-        let Country = 'US';
+        let Country = 'MX';
 
         // Function to update user login status
         function updateUserStatus() {
@@ -276,7 +276,6 @@
             
             Genesys("command", "Database.update", { messaging: { customAttributes: { CustomerLanguage: Language }}});
             console.log('## DEBUG Language Updated:', Language);
-            Genesys("command", "Database.update", { messaging: { customAttributes: { CustomerCountry: Country }}});
         }
 
         // Initialize on page load
@@ -295,6 +294,7 @@
                         }
                     }
                 });
+                Genesys("command", "Database.update", { messaging: { customAttributes: { CustomerCountry: Country }}});
                 console.log('## DEBUG Genesys database set successfully');
             } catch (error) {
                 console.log('## DEBUG Error setting Genesys database:', error.message);
