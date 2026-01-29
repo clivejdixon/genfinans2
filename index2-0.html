@@ -244,7 +244,7 @@
         // Global variables
         let UserLoggedIn = false;
         let Language = 'English';
-        let Country = 'MX';
+        let Country = 'UK';
 
         // Function to update user login status
         function updateUserStatus() {
@@ -266,7 +266,7 @@
                 console.log('## DEBUG ✗ User is not logged in');
                 Genesys("command", "Launcher.hide");
                 console.log('## DEBUG Genesys: Launcher hidden');
-                Genesys("command", "Database.update", { messaging: { customAttributes: { CustomerName: userName }}});
+//                Genesys("command", "Database.update", { messaging: { customAttributes: { CustomerName: userName }}});
             }
         }
 
