@@ -261,7 +261,7 @@
                 // Action to be implemented here
                 Genesys("command", "Launcher.show");
                 console.log('## DEBUG Genesys: Launcher shown');
-                Genesys("command", "Database.update", { messaging: { customAttributes: { CustomerName: userName }}});
+//                Genesys("command", "Database.update", { messaging: { customAttributes: { CustomerName: userName }}});
             } else {
                 console.log('## DEBUG ✗ User is not logged in');
                 Genesys("command", "Launcher.hide");
